@@ -1,0 +1,163 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #0a0a0f;
+  --color-bg-secondary: #12131a;
+  --color-bg-paper: #1a1710;
+  --color-bg-paper-light: #2a2418;
+  --color-accent-amber: #d4a843;
+  --color-accent-green: #39ff6b;
+  --color-accent-red: #c0392b;
+  --color-text-primary: #e8e0d0;
+  --color-text-muted: #8a8070;
+  --color-text-cipher: #d4a843;
+  --color-border-dossier: #3a3528;
+  --color-grid-line: rgba(212, 168, 67, 0.06);
+
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-serif: 'Libre Baskerville', serif;
+  --font-typewriter: 'Special Elite', cursive;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-serif);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+}
+
+/* Container that fills screen with consistent padding */
+.section-container {
+  width: 100%;
+  max-width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+  .section-container {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+@media (min-width: 768px) {
+  .section-container {
+    padding-left: 3%;
+    padding-right: 3%;
+  }
+}
+
+@media (min-width: 1400px) {
+  .section-container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+/* Blueprint grid background */
+.bg-blueprint {
+  background-image:
+    repeating-linear-gradient(0deg, var(--color-grid-line) 0px, var(--color-grid-line) 1px, transparent 1px, transparent 60px),
+    repeating-linear-gradient(90deg, var(--color-grid-line) 0px, var(--color-grid-line) 1px, transparent 1px, transparent 60px);
+}
+
+/* Scan-line overlay */
+.scanlines {
+  position: relative;
+}
+.scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Corner fold on paper cards */
+.corner-fold {
+  position: relative;
+}
+.corner-fold::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 24px 24px 0;
+  border-color: transparent var(--color-bg-primary) transparent transparent;
+  z-index: 2;
+}
+
+/* Glowing text */
+.text-glow {
+  text-shadow: 0 0 10px rgba(212, 168, 67, 0.5), 0 0 30px rgba(212, 168, 67, 0.2);
+}
+
+.text-glow-green {
+  text-shadow: 0 0 10px rgba(57, 255, 107, 0.5), 0 0 30px rgba(57, 255, 107, 0.2);
+}
+
+/* Interactive card hover */
+.card-hover {
+  transition: all 0.3s ease;
+  border: 1px solid var(--color-border-dossier);
+}
+.card-hover:hover {
+  border-color: var(--color-accent-amber);
+  box-shadow: 0 0 20px rgba(212, 168, 67, 0.08), inset 0 0 20px rgba(212, 168, 67, 0.03);
+}
+@media (min-width: 768px) {
+  .card-hover:hover {
+    transform: translateY(-2px);
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-dossier);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-amber);
+}
+
+::selection {
+  background: rgba(212, 168, 67, 0.3);
+  color: var(--color-text-primary);
+}
+
+/* Pulse animation for active indicators */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 4px rgba(57, 255, 107, 0.4); }
+  50% { box-shadow: 0 0 12px rgba(57, 255, 107, 0.8); }
+}
+.pulse-dot {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
