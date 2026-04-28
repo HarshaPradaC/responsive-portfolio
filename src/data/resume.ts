@@ -16,8 +16,12 @@ export const profile = {
     leetcode: 'https://leetcode.com/u/Harsha_Prada_Chandrakumar/',
     codechef: 'https://www.codechef.com/users/harshacrux',
   },
-  resumeUrl: 'https://drive.google.com/file/d/1VNIIwmHOv0dWhHAcMR5YOVuDMArOurkA/view?usp=sharing',
-  about: `I'm Harsha Prada Chandrakumar, a passionate AI Engineer and Full-Stack Developer currently pursuing a B.Tech in Artificial Intelligence and Data Science at Kumaraguru College of Technology. With a solid foundation in web and mobile development, AI/ML modeling, and data analysis, I've worked on diverse projects ranging from fintech platforms and resume builders to medical image segmentation. I'm an active member of the IEEE Computer Society, a frequent hackathon participant, and constantly exploring how GenAI can enhance contextual intelligence across agents and applications.`,
+  resumeUrl: 'https://drive.google.com/file/d/1fL8rWIep_4KQzIeyB_v9kgjcN9tI5aYP/view?usp=sharing',
+  about: `I’m Harsha Prada Chandrakumar, an AI Engineer and Full-Stack Developer currently pursuing a B.Tech in Artificial Intelligence and Data Science at Kumaraguru College of Technology. I build intelligent, user-centric applications by combining strong foundations in web development, AI/ML, and data-driven systems.
+
+My work spans across fintech platforms, AI-powered resume systems, and medical image segmentation—each project driven by a focus on solving real-world problems with scalable and thoughtful solutions. As an active member of the IEEE Computer Society and a regular hackathon participant, I thrive in fast-paced, collaborative environments.
+
+I’m particularly interested in exploring how Generative AI can enable smarter, context-aware systems across applications and agents.`,
 };
 
 export const education: Education[] = [
