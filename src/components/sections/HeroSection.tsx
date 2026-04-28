@@ -3,6 +3,7 @@ import { useEffect, useState, lazy, Suspense } from 'react';
 import { useSectionInView } from '../../hooks/useSectionInView';
 import { DecryptText } from '../ui/DecryptText';
 import { StampBadge } from '../ui/StampBadge';
+import { SideWheelNav } from '../ui/SideWheelNav';
 import { profile } from '../../data/resume';
 import {
   FaGithub,
@@ -238,7 +239,7 @@ export function HeroSection() {
             ))}
           </motion.div>
 
-          {/* Resume button */}
+          {/* Resume button — desktop only */}
           <motion.a
             href={profile.resumeUrl}
             target="_blank"
@@ -252,19 +253,23 @@ export function HeroSection() {
           >
             [ Download Full Dossier ]
           </motion.a>
+
         </div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Side cipher-wheel navigator — mobile only, absolutely positioned in hero */}
+      <SideWheelNav />
+
+      {/* Desktop-only scroll indicator */}
       <motion.div
         animate={{ y: [0, 6, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 hidden sm:flex flex-col items-center gap-1"
       >
-        <span className="font-mono text-[8px] sm:text-[9px] text-text-muted tracking-[0.2em] uppercase block text-center mb-1">
+        <span className="font-mono text-[8px] text-text-muted tracking-[0.2em] uppercase">
           Scroll
         </span>
-        <div className="w-4 h-7 border border-accent-amber/40 rounded-full flex justify-center mx-auto">
+        <div className="w-4 h-7 border border-accent-amber/40 rounded-full flex justify-center">
           <div className="w-0.5 h-1.5 bg-accent-amber rounded-full mt-1" />
         </div>
       </motion.div>
