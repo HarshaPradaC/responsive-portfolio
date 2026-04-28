@@ -5,7 +5,7 @@ export const profile = {
   fileNumber: 'HPC-2025-042',
   clearanceLevel: 'PUBLIC',
   title: 'AI Engineer & Full-Stack Developer',
-  subtitle: ['AI Research Engineer', 'Full-Stack Developer', 'ML Enthusiast'],
+  roles: ['AI Engineer', 'Full-Stack Developer', 'Problem Solver'],
   contact: {
     phone: '+91 9626666297',
     email: 'harshapradac@gmail.com',
@@ -13,6 +13,8 @@ export const profile = {
   social: {
     github: 'https://github.com/HarshaPradaC',
     linkedin: 'https://www.linkedin.com/in/harsha-prada-chandrakumar-94109528b',
+    leetcode: 'https://leetcode.com/u/Harsha_Prada_Chandrakumar/',
+    codechef: 'https://www.codechef.com/users/harshacrux',
   },
   resumeUrl: 'https://drive.google.com/file/d/1VNIIwmHOv0dWhHAcMR5YOVuDMArOurkA/view?usp=sharing',
   about: `I'm Harsha Prada Chandrakumar, a passionate AI Engineer and Full-Stack Developer currently pursuing a B.Tech in Artificial Intelligence and Data Science at Kumaraguru College of Technology. With a solid foundation in web and mobile development, AI/ML modeling, and data analysis, I've worked on diverse projects ranging from fintech platforms and resume builders to medical image segmentation. I'm an active member of the IEEE Computer Society, a frequent hackathon participant, and constantly exploring how GenAI can enhance contextual intelligence across agents and applications.`,
